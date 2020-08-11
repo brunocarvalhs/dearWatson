@@ -3,29 +3,30 @@ version: '3'
 services: 
 
     frontend:
-        image: node:10
+        build: ./frontend/.
         container_name: web
         ports: 
             - 80:3000
         volumes:
-            - ./web/.:.
+            - ./frontend:/web
         networks: 
             - app-network
 
     backend:
-        image: node:10
-        container_name: API REST
-        environment:
-            - APP_PORT=3333
-            - APP_DEBUG=false        
+        build: ./backend/.
+        container_name: backend       
         ports: 
-            - 443:3333
-        volumes:
-            - ./backend/.:.
+            - 80:3333
+        volumes: 
+            - ./backend:/app
         networks: 
             - app-network
+            # - database-network
+        
     
 networks:
     app-network:
         driver: bridge
+    # database-network:
+    #     driver: bridge
               

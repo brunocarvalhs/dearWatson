@@ -3,7 +3,7 @@
 -->
 
 <p align="center">
-    <img width="100px" src="https://github.com/brunocarvalhs/dearWatson/blob/master/docs/logo.png?raw=true" align="center" alt="dearWatson">
+    <img width="600px" src="https://github.com/brunocarvalhs/dearWatson/blob/master/docs/logo.png?raw=true" align="center" alt="dearWatson">
     <h2 align="center"></h2>
     <p align="center"></p>
 </p>

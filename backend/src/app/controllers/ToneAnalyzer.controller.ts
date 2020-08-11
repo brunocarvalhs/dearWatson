@@ -1,7 +1,7 @@
 import Watson from "./Watson.controller";
 import { Response, Request } from "express";
 
-class ToneAnalyzerController extends Watson {
+class ToneAnalyzerController {
   index(request: Request, response: Response) {}
 
   create(request: Request, response: Response) {
@@ -13,17 +13,17 @@ class ToneAnalyzerController extends Watson {
         contentType: "application/json",
       };
 
-      this.getInstanceToneAnaluzer()
+      Watson.getInstanceToneAnaluzer()
         .tone(params)
         .then((data: any) => {
           const { result } = data;
           return response.status(200).json(result);
         })
         .catch((err: Error) => {
-          console.log("error:", err);
+          return response.status(401).json({error: err});
         });
     } catch (error) {
-      return response.status(404).json({ message: error });
+      throw new Error(error);
     }
   }
 

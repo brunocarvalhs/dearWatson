@@ -1,0 +1,15 @@
+version: '3'
+
+services: 
+    backend:
+        image: node:10
+        container_name: backend
+        working_dir: /app
+        volumes: 
+            - ./backend:./app
+        ports: 
+            - 80:3333
+        command: npm start
+networks: 
+    connection:
+        - brigde

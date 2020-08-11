@@ -2,7 +2,7 @@
 *** Obrigado por estar vendo o meu README. Agora vamos rodar esse projeto :D
 -->
 
-<p align="center"><img src="https://github.com/brunocarvalhs/dearWatson/blob/docs/logo.png?raw=true"></p>
+<p align="center"><img src="https://github.com/brunocarvalhs/dearWatson/blob/master/docs/logo.png?raw=true"></p>
 
 <!-- TABLE OF CONTENTS -->
 <!-- 

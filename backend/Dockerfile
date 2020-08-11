@@ -6,4 +6,4 @@ WORKDIR /app
 
 EXPOSE ${APP_PORT}
 
-CMD ["npm", "start"]
+CMD npm install && npm start

@@ -2,9 +2,13 @@ import Watson from "./Watson.controller";
 import { Response, Request } from "express";
 
 class ToneAnalyzerController {
-  index(request: Request, response: Response) {}
 
-  create(request: Request, response: Response) {
+  /**
+   * 
+   * @param request 
+   * @param response 
+   */
+  AnalyzeGeneralTone(request: Request, response: Response) {
     try {
       const { text } = request.body;
 
@@ -20,16 +24,39 @@ class ToneAnalyzerController {
           return response.status(200).json(result);
         })
         .catch((err: Error) => {
-          return response.status(401).json({error: err});
+          return response.status(401).json({ error: err });
         });
     } catch (error) {
       throw new Error(error);
     }
   }
 
-  update(request: Request, response: Response) {}
+  /**
+   * 
+   * @param request 
+   * @param response 
+   */
+  AnalyzeCustomerEngagementTone(request: Request, response: Response) {
+    try {
+      const { chat } = request.body;
 
-  delete(request: Request, response: Response) {}
+      const toneChatParams = {
+        utterances: chat,
+      };
+
+      Watson.getInstanceToneAnaluzer()
+        .toneChat(toneChatParams)
+        .then((data: any) => {
+          const { result } = data;
+          return response.status(200).json(result);
+        })
+        .catch((err: Error) => {
+          return response.status(401).json({ error: err });
+        });
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 }
 
 export default new ToneAnalyzerController();

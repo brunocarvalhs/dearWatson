@@ -2,9 +2,13 @@ import Watson from "./Watson.controller";
 import { Response, Request } from "express";
 
 class NaturalLanguageController {
-  index(request: Request, response: Response) {}
 
-  create(request: Request, response: Response) {
+  /**
+   * 
+   * @param request 
+   * @param response 
+   */
+  AnalyzeText(request: Request, response: Response) {
     try {
       const { url } = request.body;
       const analyzeParams = {
@@ -30,9 +34,6 @@ class NaturalLanguageController {
     }
   }
 
-  update(request: Request, response: Response) {}
-
-  delete(request: Request, response: Response) {}
 }
 
 export default new NaturalLanguageController();

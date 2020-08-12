@@ -33,6 +33,9 @@ class Watson {
           apikey: TAConfig.apiKey,
         }),
         url: TAConfig.URL,
+        headers: {
+          'Accept-Language': 'pt-br'
+        }
       });
     }
     return Watson.ToneAnalyzer;
@@ -52,6 +55,9 @@ class Watson {
           apikey: NLUConfig.apiKey,
         }),
         url: NLUConfig.URL,
+        headers: {
+          'Accept-Language': 'pt-br'
+        }
       });
     }
     return Watson.NaturalLanguageUnderstanding;
@@ -71,6 +77,9 @@ class Watson {
           apikey: PIConfig.apiKey,
         }),
         url: PIConfig.URL,
+        headers: {
+          'Accept-Language': 'pt-br'
+        }
       });
     }
     return Watson.PersonalityInsights;
@@ -90,6 +99,9 @@ class Watson {
           apikey: VRConfig.apiKey,
         }),
         url: VRConfig.URL,
+        headers: {
+          'Accept-Language': 'pt-br'
+        }
       });
     }
     return Watson.VisualRecognition;
